@@ -42,10 +42,10 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
 
     students
-    .read(id)
+    .readById(id)
       .then(student => {
         if (student) {
-          res.json(student);
+          res.status(200).json(student);
         } else {
           res.status(404).json({ message: "Student could not be found" });
         }

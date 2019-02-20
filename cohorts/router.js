@@ -42,7 +42,7 @@ router.get("/", (req, res) => {
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   cohorts
-    .read(id)
+    .readById(id)
     .then(cohort => {
       if (cohort) {
         res.json(cohort);
