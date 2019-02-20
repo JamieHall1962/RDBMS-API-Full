@@ -65,13 +65,13 @@ router.get("/:id/students", (req, res) => {
         res.json(student);
       } else
         res.status(404).json({
-          message: "The student with the specified ID could not be found"
+          message: "The cohort cannot be found, or has no students currently assigned to it"
         });
     })
     .catch(err =>
       res
         .status(500)
-        .json({ error: "Server Error. The student information could not be retrieved" })
+        .json({ error: "Server Error. The cohort information could not be retrieved" })
     );
 });
 

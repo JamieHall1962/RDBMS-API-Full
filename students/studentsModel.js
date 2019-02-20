@@ -23,9 +23,8 @@ function read() {
 
 function readById(id) {
   return db("students")
-    .join("cohorts", "cohorts.id", "students.cohort_id")
-    .select("students.id", "students.name", { cohort: "cohorts.name" })
-    .where("students.cohort_id", id);
+    .where({ id })
+    .first();
 }
 
 function update(id, changes) {
